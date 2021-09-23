@@ -1,10 +1,37 @@
-import "./styles.css";
+let commentList;
+let commentField;
 
-document.getElementById("app").innerHTML = `
-<h1>Hello Vanilla!</h1>
-<div>
-  We use the same configuration as Parcel to bundle this sandbox, you can find more
-  info about Parcel
-  <a href="https://parceljs.org" target="_blank" rel="noopener noreferrer">here</a>.
-</div>
-`;
+document.addEventListener("DOMContentLoaded", () => {
+  initVals();
+});
+
+function initVals() {
+  console.log("setting attributes");
+  commentList = document.getElementById("comment-list");
+  commentField = document.getElementById("comment-text");
+}
+
+function addComment () {
+  console.log(commentField.value.trim().split(/\s+/).length, commentField.value.length);
+  if (commentField && commentField.value.trim().split(/\s+/).length > 0 && commentField.value.length > 0) {
+    const comment = document.createElement("li");
+    const text = document.createElement("p");
+    text.appendChild(document.createTextNode(commentField.value));
+    commentField.value = "";
+    comment.appendChild(text);
+    commentList.appendChild(comment);
+  }
+  else {
+    console.log("too short", commentField.value.split(/\s+/), commentField.value);
+  }
+}
+
+function clearComments () {
+  const confirmation = confirm("This will delete all comments, you sure?");
+  if (confirmation) {
+    commentList.innerHTML = "";
+  }
+  else {
+    console.log("user was scared", confirmation);
+  }
+}
