@@ -11,6 +11,8 @@ function initVals() {
   commentList = document.getElementById("comment-list");
   commentField = document.getElementById("comment-text");
   ratingSelect = document.getElementById("rating");
+  document.getElementById("comment-button").addEventListener("click", function() {console.log("asdasdasd");addComment()});
+  document.getElementById("comment-button-clear").addEventListener("click", function() {clearComments()});
 }
 
 function addComment () {
