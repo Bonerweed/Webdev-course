@@ -4,47 +4,56 @@
 <head>
 	<title>Parcel Sandbox, but a lot cooler</title>
 	<meta charset="UTF-8" />
-	<style src = "src/styles.css"></style>
+	<link href="http://fonts.googleapis.com/css?family=Garamond" rel="stylesheet" type="text/css" />
+	<link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="src/styles.css"/>
 </head>
 
 <body>
-	<h1>Hello World </h1>
-	<div id="app">
-		<table>
+	<div id="app" class = "menu-layout">
+		<h1>Hello World </h1>
+		<table id = "menu-table">
 			<tr>
-				<th>Meal</th>
-				<th>Price</th>
+				<th class = "header">Meal</th>
+				<th class = "header">Price</th>
 			</tr>
 			<tr>
-				<th>Oops All Bananas!</th>
-				<th>14.40€</th>
+				<td>Oops All Bananas!</td>
+				<td>14.40€</td>
 			</tr>
 			<tr>
-				<th>Pizza</th>
-				<th>8.50€</th>
+				<td>Pizza</td>
+				<td>8.50€</td>
 			</tr>
 			<tr>
-				<th>Pizza, Cursed</th>
-				<th>4.25€</th>
+				<td>Pizza, Cursed</td>
+				<td>4.25€</td>
 			</tr>
 			<tr>
-				<th>Grandmas Stew</th>
-				<th>12.80€</th>
+				<td>Grandmas Stew</td>
+				<td>12.80€</td>
 			</tr>
 			<tr>
-				<th>Stewed Grandma</th>
-				<th>80€</th>
+				<td>Stewed Grandma</td>
+				<td>80€</td>
 			</tr>
 		</table>
-	</div>
-	<div id = "comments">
-		<ul id = "comment-list">
-		</ul>
-	</div>
-	<div id = "comment-creation">
-		<textarea id = "comment-text" rows="8" cols="80"></textarea>
-		<button type="button" id ="comment-button" onclick="addComment()">Add Your Comment!</button>
-		<button type="button" id ="comment-button-clear" onclick="clearComments()">Nuke ALL Comments!</button>
+		<div id = "comments">
+			<ul id = "comment-list">
+			</ul>
+		</div>
+		<div id = "comment-creation">
+			<label for="rating">Rate the Menu:</label>
+			<select name="rating" id="rating">
+			  <option value="1">1</option>
+			  <option value="2">2</option>
+			  <option value="3">3</option>
+			  <option value="4">4</option>
+			</select>
+			<textarea id = "comment-text" rows="8" cols="40"></textarea>
+			<button type="button" id ="comment-button" onclick="addComment()">Add Your Comment!</button>
+			<button type="button" id ="comment-button-clear" onclick="clearComments()">Nuke ALL Comments!</button>
+		</div>
 	</div>
 	<script src="src/index.js">
 	</script>

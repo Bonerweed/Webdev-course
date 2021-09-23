@@ -1,3 +1,51 @@
 body {
-  font-family: sans-serif;
+  font-family: Garamond;
+}
+.header {
+  font-style: italic;
+}
+#menu-table {
+  text-align: left;
+  background: fillRect;
+  background-color: #f2f2f2;
+  width: 100%;
+}
+tr:nth-child(odd) {
+  background-color: gainsboro;
+}
+th {
+  background-color: #ffb02a;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+ul {
+  list-style: none;
+}
+li {
+  border-style: solid;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+.menu-layout {
+  max-width: 740px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+#comment-creation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+#comment-creation textarea,
+#comment-creation button {
+  display: block;
+}
+
+.comment {
+
+}
+button.nuke-button-invis {
+  visibility: hidden;
 }
